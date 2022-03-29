@@ -20,8 +20,8 @@ function postTweet(client_response) {
 	    text: "JavaScript is awesome!!!"
 	  },
 	  headers: {
-	   "Authorization": `Basic ${btoa(CLIENT_ID + ":" + CLIENT_SECRET)}`,
-	   "Content-type": "application/json"
+	   "authorization": `Basic ${btoa(CLIENT_ID + ":" + CLIENT_SECRET)}`,
+	   "content-type": "application/json"
 	  }
 	}).then(response => {
 		client_response.send(response);
@@ -43,8 +43,8 @@ function authorizationCode(client_response, code) {
 	    code_verifier: "kff0ffuffaffuffaffiffiffafflffaffoffo"
 	  },
 	  headers: {
-	   "Authorization": `Basic ${btoa(CLIENT_ID + ":" + CLIENT_SECRET)}`,
-	   "Content-type": "application/json"
+	   "authorization": `Basic ${btoa(CLIENT_ID + ":" + CLIENT_SECRET)}`,
+	   "content-type": "application/json"
 	  }
 	}).then(response => {
 		client_response.send(response);
