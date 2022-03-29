@@ -11,6 +11,7 @@ const CLIENT_ID = process.env.CLIENT_ID;
 const CLIENT_SECRET = process.env.CLIENT_SECRET;
 const TWITTER_API = process.env.TWITTER_API || "https://api.twitter.com/2/"
 
+console.log(CLIENT_SECRET, CLIENT_ID)
 
 function postTweet(client_response) {
 	axios({
@@ -32,19 +33,14 @@ function postTweet(client_response) {
 }
 
 function authorizationCode(client_response, code) {
-
+	console.log(btoa(CLIENT_ID + ":" + CLIENT_SECRET));
 	axios({
 	  method: "post",
 	  url: TWITTER_API + "oauth2/token",
-	  data: {
-	    code: code,
-	    grant_type:"authorization_code",
-	    redirect_uri: "https%3A%2F%2Fdev3000a7b.herokuapp.com%2Fcallback",
-	    code_verifier: "kff0ffuffaffuffaffiffiffafflffaffoffo"
-	  },
+	  data: `code=${code}&grant_type=authorization_code&redirect_uri=https%3A%2F%2Fdev3000a7b.herokuapp.com%2Fcallback&code_verifier=kff0ffuffaffuffaffiffiffafflffaffoffo`,
 	  headers: {
 	   "authorization": `Basic ${btoa(CLIENT_ID + ":" + CLIENT_SECRET)}`,
-	   "content-type": "application/json"
+	   "content-type": "application/x-www-form-urlencoded"
 	  }
 	}).then(response => {
 		client_response.send(response);
