@@ -24,7 +24,7 @@ function postTweet(client_response) {
 	}).then(response => {
 		client_response.send(response);
 	}).catch(err => {
-		client_response.send(err);
+		client_response.send(err.message);
 	});
 
 }
