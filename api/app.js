@@ -1,6 +1,6 @@
 const express = require("express");
 const app = express();
-const helpers = require("../helpers/helpers.js");
+const helpers = require("../helpers/helpers");
 const axios = require("axios");
 
 const PORT = process.env.PORT || 5000;
