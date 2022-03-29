@@ -1,0 +1,19 @@
+{
+  "name": "CatDeveloper2",
+  "version": "1.0.0",
+  "description": "This bot likes JavaScript a lot :smile:",
+  "main": "api/app.js",
+  "repository": "git@github.com:victor0x16/JavaScript-is-awesome-bot.git",
+  "author": "Cat Developer <localhost.mars2022@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^0.26.1",
+    "chai": "^4.3.6",
+    "express": "^4.17.3",
+    "mocha": "^9.2.2"
+  },
+  "scripts": {
+    "start": "node api/app.js",
+    "test": "mocha"
+  }
+}
