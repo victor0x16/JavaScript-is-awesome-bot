@@ -11,7 +11,8 @@
     "express": "^4.17.3"
   },
   "scripts": {
-    "start": "nodemon api/app.js",
+    "dev": "nodemon api/app.js",
+    "start": "node api/app.js",
     "test": "mocha"
   },
   "devDependencies": {
