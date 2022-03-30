@@ -12,6 +12,15 @@ const TWITTER_API = process.env.TWITTER_API;
 const CODE_VERIFIER = process.env.CODE_VERIFIER;
 const CALLBACK = process.env.CALLBACK;
 
+
+app.get("*", function (request, response) {
+	response.send({ message: "It's not working today🍕!"});
+});
+
+app.post("*", function (request, response) {
+	response.send({ message: "It's not working today🍕!"});
+});
+
 function postTweet(client_response) {
 	axios({
 	  method: "post",
@@ -39,7 +48,7 @@ function authorizationCode(client_response, code) {
 	  data: { 
 	  	code:code,
 	  	grant_type:"authorization_code",
-	  	redirect_uri: CALLBACK + ,
+	  	redirect_uri: CALLBACK,
 	  	code_verifier: CODE_VERIFIER
 	  },
 	  headers: {
