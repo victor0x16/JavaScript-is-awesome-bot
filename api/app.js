@@ -20,12 +20,11 @@ function postTweet(client_response) {
 	  url: TWITTER_API + "tweets",
 	  data: {
 	    text: "JavaScript is awesome!!!",
-	    token: ACCESS_TOKEN
 	  },
 	  headers: {
-	   "accept": "application/json",
-	   "authorization": `Basic ${btoa(CLIENT_ID + "111:" + CLIENT_SECRET)}`,
-	   "content-type": "application/json"
+	  "accept": "application/json",
+	  "authorization": `Bearer ${ACCESS_TOKEN}`,
+	  "content-type": "application/json"
 	  }
 	}).then(response => {
 		client_response.send(JSON.stringify(response.data));
@@ -75,7 +74,7 @@ app.get("/test" , function (request, client_response) {
 	  	ids: 20
 	  },
 	  headers: {
-	   "authorization": `Bearer ${BEARER_TOKEN}`,
+	   "authorization": `Bearer ${ACCESS_TOKEN}`,
 	   "content-type": "application/json"
 	  }
 	}).then(response => {
