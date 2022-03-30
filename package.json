@@ -2,7 +2,7 @@
   "name": "CatDeveloper2",
   "version": "1.0.0",
   "description": "This bot likes JavaScript a lot :smile:",
-  "main": "api/app.js",
+  "main": "api/index-green.js",
   "repository": "git@github.com:victor0x16/JavaScript-is-awesome-bot.git",
   "author": "Cat Developer <localhost.mars2022@gmail.com>",
   "license": "MIT",
@@ -11,8 +11,8 @@
     "express": "^4.17.3"
   },
   "scripts": {
-    "dev": "nodemon api/app.js",
-    "start": "node api/app.js",
+    "dev": "nodemon api/index-green.js",
+    "start": "node api/index-green.js",
     "test": "mocha"
   },
   "devDependencies": {
